@@ -23,7 +23,12 @@ static int printf_lag(char flag, va_list va)
     }
     else if (flag == 'u')
     {
+        ft_iputstr("0x",&bts);
         ft_idigit((unsigned int)va_arg(va,int), &bts);
+    }
+    else
+    {
+        ft_iputchar(flag,&bts);
     }
     return (bts);
 }
