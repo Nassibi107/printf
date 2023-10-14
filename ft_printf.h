@@ -12,6 +12,6 @@ void    ft_iputstr(char *s, int *bts);
 void    ft_iputnbr_base(long n, int base, char font, int *bts);
 void    ft_print_hex(unsigned long long n, int *bts) ;
 void    ft_idigit(unsigned int nb, int *bts);
-void    ft_putnbr(unsigned int n, int *bts);
+void ft_putnbr(int n, int *bts);
 
 #endif

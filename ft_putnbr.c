@@ -1,7 +1,7 @@
 
 #include "ft_printf.h"
 
-void ft_iputnr(int n, int *bts)
+void ft_putnbr(int n, int *bts)
 {
     if (n == -2147483648)
     {

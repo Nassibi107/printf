@@ -40,7 +40,7 @@ int ft_printf(const char *format, ...)
     while (format[i])
     {
         if (format[i] == '%')
-            cp += printf_lag(format[i++],va);
+            cp += printf_lag(format[++i],va);
         else
             cp += write(1 , &format[i],1);
         i++;
