@@ -1,7 +1,7 @@
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_iputchar(char c)
+void ft_iputchar(char c, int *bts)
 {
-    return write(1, &c, 1);
+    (*bts) += write(1, &c, 1);
 }

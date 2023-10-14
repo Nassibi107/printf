@@ -1,5 +1,5 @@
-SRCS=    ft_printf.c ft_iputchar.c ft_iputstr.c  printf_lag.c \
-		ft_iputnbr_base.c ft_print_hex.c
+SRCS  = ft_printf.c ft_iputchar.c ft_iputstr.c ft_iputnbr_base.c \
+		ft_print_hex.c ft_idigit.c ft_putnbr.c
 
 OBJS	= ${SRCS:%.c=%.o}
 

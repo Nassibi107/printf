@@ -1,17 +1,18 @@
 
 #include "ft_printf.h"
-int ft_print_hex(unsigned long long n)
+void ft_print_hex(unsigned long long n, int *bts)
 {
-    char *base;
+    char    *base;
 
     base = "0123456789abcdef";
     if (n < 16)
     {
-        return (base[n % 16]);
+        ft_iputchar(base[n % 16], bts);
+        return;
     }
     else
     {
-       cp = ft_print_hex(n / 16);
-       return cp + ft_print_hex(n % 16);
+        ft_print_hex(n / 16, bts);
+        ft_print_hex(n % 16, bts);
     }
 }
