@@ -11,20 +11,19 @@ static int printf_lag(char flag, va_list va)
     else if (flag == 's')
         ft_iputstr(va_arg(va, char *), &bts);
     else if (flag == 'd' || flag == 'i')
-        ft_iputnbr_base((long)va_arg(va, int), 10, flag, &bts);
+        ft_putnbr(va_arg(va, int ), &bts);
     else if (flag == 'X' || flag == 'x')
-        ft_iputnbr_base((long)va_arg(va, int), 16, flag, &bts);
+        ft_iputnbr_base(va_arg(va, unsigned int), 16, flag, &bts);
     else if (flag == '%')
         ft_iputchar(flag, &bts);
     else if (flag == 'p')
     {
         ft_iputstr("0x", &bts);
-        ft_print_hex((unsigned long long)va_arg(va, int), &bts);
+        ft_print_hex(va_arg(va,unsigned long long ), &bts);
     }
     else if (flag == 'u')
     {
-        ft_iputstr("0x",&bts);
-        ft_idigit((unsigned int)va_arg(va,int), &bts);
+        ft_putnbr_u(va_arg(va,unsigned int), &bts);
     }
     else
     {
@@ -38,10 +37,11 @@ int ft_printf(const char *format, ...)
     va_list va;
     int     i;
     int     cp;
-
     va_start(va,format);
     i = 0;
     cp = 0;
+      if (!format)
+        cp += write(1 , "-1",1);
     while (format[i])
     {
         if (format[i] == '%')
@@ -52,4 +52,4 @@ int ft_printf(const char *format, ...)
     }
     va_end(va);
     return (cp);
-}  
+}

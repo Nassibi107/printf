@@ -10,6 +10,6 @@ int ft_printf(const char *format, ...);
 int printf_lag(char flag, va_list va);
 int ft_iputchar(char c);
 int ft_iputstr(char *s);
-int ft_iputnbr_base(long n, int base, char font);
+int ft_iputnbr_base( unsigned long long n, int base, char font);
 
 #endif

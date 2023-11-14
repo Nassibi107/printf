@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void ft_iputnbr_base(long n, int base , char font, int *bts)
+void ft_iputnbr_base(long long n, int base , char font, int *bts)
 {
     char *bases;
     if (font == 'X')
@@ -9,8 +9,9 @@ void ft_iputnbr_base(long n, int base , char font, int *bts)
         bases = "0123456789abcdef";
     if (n < 0)
     {
-        write(1, "-", 1);
-        ft_iputnbr_base(-n, base,font,bts);
+       *(bts) += write(1, "-", 1);
+        n *= -1;
+        ft_iputnbr_base(n, base,font,bts);
     }
     else if (n < base)
         return ft_iputchar(bases[n], bts);
