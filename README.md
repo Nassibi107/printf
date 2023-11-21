@@ -1,5 +1,8 @@
 # printf
-
+# What is Variadic Function?
+Variadic functions are functions whose total number of elements is unknown at the beginning. For ex, you could printf(“%s %d”, “hello”, 0), which is 2 things, or printf(“%s %d %c”, “hello”, 0, ‘w’), which is 3 things.
+And so on and so forth. You don’t know how many things you’ll have to print before actually starting printing. I wrote a simple function below. We will examine this together step by step. I believe this function is good and simple enough.
+source for deaitls  =>  <a> https://medium.com/@ayogun/variadic-functions-ccb84544ff6c <a>
 # storage classes
 
 A storage class defines the scope (visibility) and life-time of variable and/or functions within a C program.
